@@ -10,6 +10,10 @@ import cssnano from "cssnano";
 import { terser } from "rollup-plugin-terser";
 import serve from "rollup-plugin-serve";
 import livereload from "rollup-plugin-livereload";
+import alias from "@rollup/plugin-alias";
+import path from "path";
+
+const resolveDir = (dir) => path.resolve(__dirname, dir);
 
 export default {
   input: {
@@ -62,15 +66,18 @@ export default {
     terser(), // 代码压缩
     serve({
       contentBase: "", //服务器启动的文件夹，默认是项目根目录，需要在该文件下创建index.html
-      port: 8020, //端口号，默认10001
+      port: 8000, //端口号，默认10001
     }),
     livereload("dist"), //watch dist目录，当目录中的文件发生变化时，刷新页面
+    alias({
+      entries: [{ find: "@", replacement: resolveDir("src") }],
+    }),
   ],
 };
 
 // rollup基础插件
 
-// rollup-plugin-alias: 提供modules名称的 alias 和reslove 功能
+// @rollup/plugin-alias: 提供modules名称的 alias 和reslove 功能
 
 // rollup-plugin-babel: 提供babel能力
 
