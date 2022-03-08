@@ -60,4 +60,7 @@ module.exports = {
     }),
     new BundleAnalyzerPlugin(),
   ],
+  cache: {
+    type: 'filesystem', // 文件缓存，构建时间减少90%
+  },
 }

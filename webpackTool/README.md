@@ -1,3 +1,11 @@
+## webpack 优点
+
+1、拥有依赖管理、动态打包、代码分离、按需加载、代码压缩、静态资源压缩、缓存等配置；
+2、webpack 扩展性强，插件机制完善，开发者可自定义插件、loader；
+3、webpack 社区庞大，更新速度快，轮子丰富；
+4、webpack 通过依赖关系图可以获取非代码资源，如 images 或 web 字体等。并会把它们作为依赖提供给应用程序。
+5、每个模块都可以明确表述它自身的依赖，在打包时可根据依赖进行打包，避免打包未使用的模块
+
 ## webpack-cli 是 webpack 的命令行工具，用于在命令行中使用 webpack
 
 # 处理 js 文件，将 es6+代码进行编译成为浏览器可以识别的低版本兼容性良好的 js 代码了
@@ -194,4 +202,12 @@ development(开发环境) 和 production(生产环境) 这两个环境下的构�
 开发环境配置 webpack.development.js
 生产环境配置 webpack. production.js
 
-## webpackTool 下 .git 文件 不想新开仓库，重命名为.gitt，在使用时需要改为.git
+## 构建速度优化
+
+# cache
+
+通过配置 webpack 持久化缓存，cache: filesystem，来缓存生成的 webpack 模块和 chunk，改善构建速度，可提速 90% 左右；
+
+# 减少 loader、plugin
+
+每个的 loader、plugin 都有其启动时间，尽量少地使用工具，将非必须的 loader、plugins 删除

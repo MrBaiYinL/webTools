@@ -11,7 +11,7 @@ module.exports = smp.wrap(
     cache: {
       type: 'filesystem', // 使用文件缓存
     },
-    entry: './src/index.js',
+    entry: { index: './src/index.js' },
     devServer: {
       historyApiFallback: true,
       open: false, // 自动打开页面
