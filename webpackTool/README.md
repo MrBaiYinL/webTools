@@ -193,3 +193,5 @@ development(开发环境) 和 production(生产环境) 这两个环境下的构�
 通用配置 webpack.common.js
 开发环境配置 webpack.development.js
 生产环境配置 webpack. production.js
+
+## webpackTool 下 .git 文件 不想新开仓库，重命名为.gitt，在使用时需要改为.git
